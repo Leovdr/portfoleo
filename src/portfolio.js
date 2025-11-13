@@ -12,6 +12,7 @@ const about = {
   description:
     'Strengths include a strong enthusiasm for learning new things, critical and creative thinking, and great attention to detail. On the other hand, I’m still gaining professional experience, can be quite stubborn at times, and tend to be more introverted by nature.',
   social: {
+    resume: '/Portfoleo.pdf',
     linkedin: 'https://www.linkedin.com/in/aditamasy/',
     github: 'https://github.com/Leovdr',
   },

@@ -4,7 +4,8 @@ import { about } from '../../portfolio'
 import './About.css'
 
 const About = () => {
-  const { name, role, description, resume, social, picture } = about
+  // Hilangkan destructuring untuk resume (resume di dalam social)
+  const { name, role, description, social, picture } = about
 
   return (
     <div className='about center'>
@@ -21,27 +22,29 @@ const About = () => {
           />
         )}
 
-    <div className='about__intro'>
-      {name && (
-        <h1>
-          Hi, I am <span className='about__name'>{name}.</span>
-        </h1>
-      )}
+        <div className='about__intro'>
+          {name && (
+            <h1>
+              Hi, I am <span className='about__name'>{name}.</span>
+            </h1>
+          )}
 
-      {role && <h2 className='about__role'>An {role}.</h2>}
-      <p className='about__desc'>{description && description}</p>
-      </div>
+          {role && <h2 className='about__role'>An {role}.</h2>}
+          <p className='about__desc'>{description && description}</p>
+        </div>
       </div>
 
       <div className='about__contact center'>
-        {resume && (
-          <a href={resume}>
+        {/* Resume button -- fix lokasi resume di dalam social */}
+        {social && social.resume && (
+          <a href={social.resume} target="_blank" rel="noopener noreferrer">
             <span type='button' className='btn btn--outline'>
               Resume
             </span>
           </a>
         )}
 
+        {/* Social links */}
         {social && (
           <>
             {social.github && (
